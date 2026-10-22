@@ -38,5 +38,9 @@ cat > $APP/Contents/Info.plist <<PL
 <key>NSDownloadsFolderUsageDescription</key><string>Medir o espaço ocupado por Downloads.</string>
 </dict></plist>
 PL
-codesign --force --sign - $APP
+# A stable identity keeps macOS privacy permissions (folders, Bluetooth) across rebuilds; an ad-hoc
+# signature changes with every build, so macOS would ask again each time. Override with SIGN_IDENTITY.
+IDENTITY=${SIGN_IDENTITY:-$(security find-identity -v -p codesigning | awk -F'"' '/Apple Development|Developer ID Application/ {print $2; exit}')}
+codesign --force --sign "${IDENTITY:--}" $APP
+echo "Signed with: ${IDENTITY:-ad-hoc}"
 echo "OK: $APP"

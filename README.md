@@ -21,7 +21,7 @@
 
 Download **`Vitals-1.0.dmg`** (drag to Applications) or **`Vitals-1.0.pkg`** (installer) from the [Releases](../../releases) page.
 
-The app is not notarized (ad-hoc signed). On first launch, right-click **Vitals.app → Open**, or allow it in **System Settings → Privacy & Security**. Alternatively:
+The app is signed with a development certificate but not notarized. On first launch, right-click **Vitals.app → Open**, or allow it in **System Settings → Privacy & Security**. Alternatively:
 
 ```sh
 xattr -dr com.apple.quarantine /Applications/Vitals.app
@@ -67,7 +67,7 @@ Needs Xcode Command Line Tools (Swift 6).
 
 Baixe **`Vitals-1.0.dmg`** (arraste para Aplicativos) ou **`Vitals-1.0.pkg`** (instalador) na página de [Releases](../../releases).
 
-O app não é notarizado (assinatura ad-hoc). Na primeira vez, clique com o botão direito em **Vitals.app → Abrir**, ou permita em **Ajustes do Sistema → Privacidade e Segurança**. Ou então:
+O app é assinado com certificado de desenvolvedor, mas não é notarizado. Na primeira vez, clique com o botão direito em **Vitals.app → Abrir**, ou permita em **Ajustes do Sistema → Privacidade e Segurança**. Ou então:
 
 ```sh
 xattr -dr com.apple.quarantine /Applications/Vitals.app
